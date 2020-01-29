@@ -1,12 +1,19 @@
+
 package ProxyExample;
 
 class ProxyPessoa implements Pessoa {
 	
-	private String id;
+	private Integer id;
 	private Pessoa pessoa;
   
-	public ProxyPessoa(String nome) {
-		this.id = nome;
+	// Construtor
+	public ProxyPessoa(Integer id) {
+		this.id = id;
+	}
+	
+	// Getters
+	public Integer getId() {
+		return this.id;
 	}
   
 	public String getNome() {
@@ -16,7 +23,11 @@ class ProxyPessoa implements Pessoa {
 		return pessoa.getNome();
 	}
   
-	public String getId() {
-		return this.id;
+	public Integer getIdade() {
+		if (pessoa == null)
+			pessoa = PessoaDAO.getPessoaByID(this.id);
+
+		return pessoa.getIdade();
 	}
+	
 }

@@ -1,3 +1,4 @@
+
 package ProxyExample;
 
 import java.util.ArrayList;
@@ -5,17 +6,25 @@ import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
-		List<Pessoa> pessoas = new ArrayList<Pessoa>();
+		
+		// Lista de Pessoas
+		List<Pessoa> agenda = new ArrayList<Pessoa>();
 	            
-		// Cria cada Proxy para encapsular o acesso a classe "PessoaImpl"
-		pessoas.add(new ProxyPessoa("A"));
-		pessoas.add(new ProxyPessoa("B"));
-		pessoas.add(new ProxyPessoa("C"));
+		// Criação
+		agenda.add( new ProxyPessoa(10) );
+		agenda.add( new ProxyPessoa(20) );
+		agenda.add( new ProxyPessoa(30) );
 	  
-		System.out.println("Nome: " + pessoas.get(0).getNome()); 
-		System.out.println("Nome: " + pessoas.get(1).getNome()); 
-		System.out.println("Nome: " + pessoas.get(0).getNome()); 
+		// Chamada do Objeto: getNome()
+		System.out.println("Nome: " + agenda.get(0).getNome()); 
+		System.out.println("Nome: " + agenda.get(1).getNome());
+		
+		// Chamada do Objeto: getIdade()
+		System.out.println("Idade: " + agenda.get(0).getIdade());
+		System.out.println("Idade: " + agenda.get(1).getIdade());
 	  
-		System.out.println("Id da 3ª - " + pessoas.get(2).getId());
+		// Lazy Loading
+		System.out.println("Id da 3ª - " + agenda.get(2).getId());
+		
 	}
 }

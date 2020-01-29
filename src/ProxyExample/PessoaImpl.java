@@ -1,21 +1,31 @@
+
 package ProxyExample;
 
-class PessoaImpl implements Pessoa {
+public class PessoaImpl implements Pessoa {
 	
+	private Integer id;
 	private String nome;
-	private String id;
+	private Integer idade;
   
-	public PessoaImpl(String id, String nome) {
+	// Construtor
+	public PessoaImpl(Integer id, String nome, Integer idade) {
 		this.id = id;
 		this.nome = nome;
+		this.idade = idade;
 		
 		System.out.println("Retornou a pessoa do banco de dados ->  " + nome);
 	}
-  
-	public String getNome() {
-		return nome;
-	}
-	public String getId() {
+
+	// Getters
+	public Integer getId() {
 		return this.id;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public Integer getIdade() {
+		return this.idade;
 	}
 }

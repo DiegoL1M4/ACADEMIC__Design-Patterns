@@ -1,8 +1,12 @@
+
 package ProxyExample;
 
-interface Pessoa {
-	
+public interface Pessoa {
+
+	public Integer getId();
+
 	public String getNome();
-	public String getId();
-	
+
+	public Integer getIdade();
+
 }
